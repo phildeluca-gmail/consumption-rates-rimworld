@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- order 86 sits next to Pawn Hotgroups' 85, among the other minimized
+       icon buttons rather than shoving a labelled one along the bar.
+
+       validWithoutMap is deliberately ABSENT, same reasoning as Pawn
+       Hotgroups' own button - sampling and the chart are both a per-map
+       thing, and the window has nothing to show on the world view.
+
+       tabWindowClass needs the full type name - the loader searches the
+       game's own namespaces, not this mod's. -->
+  <MainButtonDef>
+    <defName>ConsumptionRates</defName>
+    <label>rates</label>
+    <description>See a live surplus/deficit chart for your colony's stock and power.</description>
+    <tabWindowClass>ConsumptionRates.UI.MainTabWindow_ConsumptionRates</tabWindowClass>
+    <order>86</order>
+    <minimized>True</minimized>
+    <iconPath>UI/Buttons/MainButtons/ConsumptionRates</iconPath>
+  </MainButtonDef>
+
+</Defs>

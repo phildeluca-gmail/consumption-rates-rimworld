@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>phildeluca.consumptionrates</packageId>
+  <name>Ketjak's Consumption Rates</name>
+  <author>Ketjak</author>
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+  <description>A bottom-row tab showing a live surplus/deficit chart for everything countable in your colony - food, steel, components, medicine, chemfuel and the rest - plus power generated against power used. Each row shows the creation number and the consumption number side by side, with a bar for the net: right of centre for a surplus, left for a deficit, worst first.
+
+Rates are measured from the game itself over a rolling window (an hour by default), not calculated from formulas. A part-grown field counts toward its crop's future numbers at its measured growth speed, so the chart warns before a gap opens rather than only after the field is cut.
+
+Checkboxes in the window let you choose which rows to see, the way the Numbers mod does. Two settings control how often a sample is taken and how long a window of samples is kept; both are preferences, not save data.
+
+Sampling history is saved with the colony, so the chart is not empty again after a reload.</description>
+  <!-- No modDependencies. Zero Harmony patches - a MainButtonDef plus a
+       MainTabWindow subclass gives us the bottom-row tab, and a plain
+       MapComponent.MapComponentTick() override gives us the sampling
+       clock. Nothing here needs to intercept a call belonging to vanilla
+       or another mod. See cr-architecture.md section 12 at umbrella level.
+
+       Documents live in the umbrella folder prefixed cr-, never here.
+       CLAUDE.md forbids a README or a CLAUDE.md in a mod folder. -->
+</ModMetaData>

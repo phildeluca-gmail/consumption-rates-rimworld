@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>ConsumptionRates</AssemblyName>
+    <RootNamespace>ConsumptionRates</RootNamespace>
+    <LangVersion>7.3</LangVersion>
+    <OutputPath>../../Assemblies/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 0Harmony is referenced but NOTHING in this mod patches anything -
+         architecture section 12: a main tab needs a MainButtonDef plus a
+         MainTabWindow subclass, and sampling is a plain MapComponent
+         override. Same reasoning Pawn Hotgroups' csproj records for the
+         same reference. -->
+    <Reference Include="0Harmony">
+      <HintPath>../../../lib/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>../../../lib/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>../../../lib/UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../../../lib/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- UnityEngine.dll only type-forwards, so GUI, Color, Rect and
+         TextAnchor are unreachable through it. The bar chart and the
+         toggle checkboxes need all four. Same two modules Pawn Hotgroups
+         and Standard Cargo pull in. -->
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>../../../lib/UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>../../../lib/UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- ../../../../lib, not ../../../lib - this mod's folder was ordered
+       one level deeper than the other parked mods (RimWorld-ConsumptionRates\
+       ConsumptionRates\ rather than plain ConsumptionRates\ at umbrella
+       level, cr-architecture.md section "what was actually built"), so it
+       needs one extra step up to reach the umbrella's lib\. CLAUDE.md
+       section 2 still governs the mechanism, not the exact step count. -->
+
+</Project>
